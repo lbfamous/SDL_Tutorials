@@ -1,13 +1,10 @@
 //#include <iostream>
 //INIT SDL_Window
 
-
 #include "SDL.h"
 #include <stdio.h>
 #pragma comment(lib,"SDL2.lib")
 #pragma comment(lib,"SDL2main.lib")
-
-
 
 const int WIDTH = 640;
 const int HEIGHT = 480;
