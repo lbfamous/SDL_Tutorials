@@ -69,11 +69,7 @@ int main(int argc, char** argv)
     if (init())
     {
         if (loadMedia())
-        {
-            //SDL_BlitSurface(helloWorld, nullptr, screenSurface, nullptr);
-            //SDL_UpdateWindowSurface(window);
-            //SDL_Delay(2000);
-
+        {            
             bool quit = false;
             SDL_Event e;
 
@@ -81,7 +77,12 @@ int main(int argc, char** argv)
             {
                 while (SDL_PollEvent(&e) != 0)
                 {
-                    if (e.type == SDL_QUIT)
+                    if (e.type == SDL_QUIT )
+                    {
+                        quit = true;
+                    }
+
+                    if (e.type == SDL_KEYUP && e.key.keysym.sym == SDLK_ESCAPE)
                     {
                         quit = true;
                     }
