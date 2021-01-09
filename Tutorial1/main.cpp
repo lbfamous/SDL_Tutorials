@@ -29,7 +29,7 @@ int main(int argc,char** argv)
         else
         {
             screenSurface = SDL_GetWindowSurface(window);
-            SDL_FillRect(screenSurface, NULL, SDL_MapRGB(screenSurface->format, 0xFF, 0xFF, 0xFF));
+            SDL_FillRect(screenSurface, NULL, SDL_MapRGB(screenSurface->format, 0x0F, 0, 0xFF));
             SDL_UpdateWindowSurface(window);
             SDL_Delay(20000);
             printf("SDL_DESTROYED\n");
@@ -39,6 +39,6 @@ int main(int argc,char** argv)
     SDL_DestroyWindow(window);
     SDL_Quit();
 
-    //system("pause");
+    system("pause");
     return 0;
 }

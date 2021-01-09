@@ -1,4 +1,3 @@
-//#include <cstdio>
 #include <SDL.h>
 #include <SDL_image.h>
 #include <cstdio>
@@ -9,14 +8,19 @@
 #pragma comment(lib,"SDL2_image.lib")
 
 
+const int SCREEN_WIDTH = 640;
+const int SCREEN_HEIGHT = 480;
+
 SDL_Window* gWindow = nullptr;
 SDL_Renderer* gRenderer = nullptr;
+SDL_Rect gSpriteClips[4];
+
 
 
 class LTexture {
 
 public:
-	LTexture() 
+	LTexture()
 	{
 		mTexture = nullptr;
 		mWidth = 0;
@@ -33,14 +37,14 @@ public:
 		SDL_Texture* newTexture = nullptr;
 		SDL_Surface* loadedSurface = IMG_Load(path.c_str());
 		if (loadedSurface == nullptr) {
-			std::string ppath  = std::string("../") + path;
+			std::string ppath = std::string("../") + path;
 			loadedSurface = IMG_Load(ppath.c_str());
-			if(loadedSurface == nullptr) {
+			if (loadedSurface == nullptr) {
 				printf("Unable to load image %s! SDL_image Error: %s\n", path.c_str(), IMG_GetError());
 			}
 		}
 
-		if (loadedSurface != nullptr){	
+		if (loadedSurface != nullptr) {
 			SDL_SetColorKey(loadedSurface, SDL_TRUE, SDL_MapRGB(loadedSurface->format, 0, 0xFF, 0xFF));
 			newTexture = SDL_CreateTextureFromSurface(gRenderer, loadedSurface);
 			if (newTexture == nullptr) {
@@ -68,10 +72,17 @@ public:
 
 	}
 
-	void render(int x, int y) {
+	void render(int x, int y,SDL_Rect* clip = nullptr) {
 
 		SDL_Rect renderQuad = { x,y,mWidth,mHeight };
-		SDL_RenderCopy(gRenderer, mTexture, NULL, &renderQuad);
+
+		if (clip != nullptr)
+		{
+			renderQuad.w = clip->w;
+			renderQuad.h = clip->h;
+		}
+		SDL_RenderCopy(gRenderer, mTexture, clip, &renderQuad);
+
 	}
 
 
@@ -94,46 +105,44 @@ private:
 };
 
 
-const int SCREEN_WIDTH = 640;
-const int SCREEN_HEIGHT = 480;
 
-
-
-LTexture gFooTexture;
-LTexture gBackgroundTexture;
+LTexture gSpriteSheetTexture;
 
 bool init() {
 
 	bool success = true;
 
-	if (SDL_Init(SDL_INIT_VIDEO) < 0) {
-		printf("SDL could not initialize! SDL ERROR: %s\n", SDL_GetError());
+	if (SDL_Init(SDL_INIT_VIDEO) < 0){
+
+		printf("SDL Could not initialize! SDL Error: %s\n", SDL_GetError());
 		success = false;
 	}
 	else {
 
-		if (!SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY,"1"))
-		{
-			printf("Warning: Linear texture filter not enabled");
+		if (!SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY,"1")){
+			printf("Warning: Linear texture filtering not enabled!");
 		}
-
-		gWindow = SDL_CreateWindow("SDL_Tutorial 10", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
-
+		gWindow = SDL_CreateWindow("SDL Tutorial", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
 		if (gWindow == nullptr)
 		{
-			printf("Window could not be created! SDL Error: %s\n", SDL_GetError());
+			printf("Window could not be created! Create Error:%s\n", SDL_GetError());
+			success = false;
 		}
 		else {
+
 			gRenderer = SDL_CreateRenderer(gWindow, -1, SDL_RENDERER_ACCELERATED);
-			if (gRenderer == NULL) {
+			if (gRenderer == nullptr)
+			{
 				printf("Renderer could not be created! SDL Error %s\n", SDL_GetError());
 				success = false;
-			}else {
+			}
+			else {
 				SDL_SetRenderDrawColor(gRenderer, 0xFF, 0xFF, 0xFF, 0xFF);
+
 				int imgFlags = IMG_INIT_PNG;
 				if (!(IMG_Init(imgFlags)&imgFlags))
 				{
-					printf("SDL_IMAGE could not initialize! SDL_image Error %s\n", IMG_GetError());
+					printf("SDL image could not initialize! SDL_image Error: %s\n", SDL_GetError());
 					success = false;
 				}
 			}
@@ -145,51 +154,69 @@ bool init() {
 bool loadMedia() {
 
 	bool success = true;
-	if (!gFooTexture.loadFromFile("res/foo.png"))
+
+	if (!gSpriteSheetTexture.loadFromFile("res/dots.png"))
 	{
-		printf("Failed to load Foo texture image!\n");
+		printf("Failed to load sprite sheet texture");
 		success = false;
 	}
+	else {
 
-	if (!gBackgroundTexture.loadFromFile("res/background.png"))
-	{
-		printf("Failed to load background texture image!\n");
-		success = false;
+		gSpriteClips[0].x = 0;
+		gSpriteClips[0].y = 0;
+		gSpriteClips[0].w = 100;
+		gSpriteClips[0].h = 100;
+
+		gSpriteClips[1].x = 100;
+		gSpriteClips[1].y = 0;
+		gSpriteClips[1].w = 100;
+		gSpriteClips[1].h = 100;
+
+		gSpriteClips[2].x = 0;
+		gSpriteClips[2].y = 100;
+		gSpriteClips[2].w = 100;
+		gSpriteClips[2].h = 100;
+
+		gSpriteClips[3].x = 100;
+		gSpriteClips[3].y = 100;
+		gSpriteClips[3].w = 100;
+		gSpriteClips[3].h = 100;
 	}
 	return success;
 }
 
 void close() {
 
-	gFooTexture.free();
-	gBackgroundTexture.free();
+	gSpriteSheetTexture.free();
 
 	SDL_DestroyRenderer(gRenderer);
 	SDL_DestroyWindow(gWindow);
 
+	gWindow = nullptr;
+	gRenderer = nullptr;
+
 	IMG_Quit();
 	SDL_Quit();
 
+
 }
 
-int main(int argc, char** argv)
-{
+
+int main(int argc, char** argv) {
 
 	if (!init()){
-
 		printf("Failed to initialize!\n");
 	}
 	else {
+	//- 
 		if (!loadMedia())
 		{
-			printf("Failed to load media!\n");
+
 		}
 		else {
 			bool quit = false;
-
 			SDL_Event e;
-			while (!quit)
-			{
+			while (!quit) {
 				while (SDL_PollEvent(&e) != 0)
 				{
 					if (e.type == SDL_QUIT)
@@ -197,17 +224,20 @@ int main(int argc, char** argv)
 						quit = true;
 					}
 				}
-				SDL_SetRenderDrawColor(gRenderer, 0, 0, 0,0xFF);
+			
+				SDL_SetRenderDrawColor(gRenderer, 0xFF, 0xFF, 0xFF, 0xFF);
 				SDL_RenderClear(gRenderer);
 
-				gBackgroundTexture.render(0, 0);
-				gFooTexture.render(240, 190);
-
+				gSpriteSheetTexture.render(0, 0, &gSpriteClips[0]);
+				gSpriteSheetTexture.render(SCREEN_WIDTH - gSpriteClips[1].w, 0, &gSpriteClips[1]);
+				gSpriteSheetTexture.render(0, SCREEN_HEIGHT - gSpriteClips[2].h, &gSpriteClips[2]);
+				gSpriteSheetTexture.render(SCREEN_WIDTH - gSpriteClips[3].w, SCREEN_HEIGHT - gSpriteClips[3].h, &gSpriteClips[0]);
 				SDL_RenderPresent(gRenderer);
-			}
-		}
+			}		
 	}
+}
+	
 
-	close();
+
 	return 0;
 }
