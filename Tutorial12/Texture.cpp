@@ -100,6 +100,8 @@ void Texture::render(Point& pt, Color& dwColor, SDL_Rect* clip /*= nullptr*/)
 
 void Texture::destroy()
 {
+	printf(__FUNCTION__);
+	
 	free();
 }
 
