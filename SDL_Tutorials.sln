@@ -3,31 +3,33 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tutorial1", "Tutorial1\Tutorial1.vcxproj", "{F47BEDDD-7269-4DC9-8DF7-0521AC5C9E4B}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tutorial_01", "Tutorial1\Tutorial1.vcxproj", "{F47BEDDD-7269-4DC9-8DF7-0521AC5C9E4B}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tutorial2", "Tutorial2\Tutorial2.vcxproj", "{6BBD7978-9777-4E95-A673-1BE53D285C37}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tutorial_02", "Tutorial2\Tutorial2.vcxproj", "{6BBD7978-9777-4E95-A673-1BE53D285C37}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tutorial3", "Tutorial3\Tutorial3.vcxproj", "{C0FEC1E1-6E2D-437E-9FBB-6F69ABCBE845}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tutorial_03", "Tutorial3\Tutorial3.vcxproj", "{C0FEC1E1-6E2D-437E-9FBB-6F69ABCBE845}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tutorial4", "Tutorial4\Tutorial4.vcxproj", "{89696E8C-0413-4F4F-9BED-AE2E0942D9B3}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tutorial_04", "Tutorial4\Tutorial4.vcxproj", "{89696E8C-0413-4F4F-9BED-AE2E0942D9B3}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tutorial5", "Tutorial5\Tutorial5.vcxproj", "{D35705E4-DBE2-4BD5-84DF-E69421C7E1F6}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tutorial_05", "Tutorial5\Tutorial5.vcxproj", "{D35705E4-DBE2-4BD5-84DF-E69421C7E1F6}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tutorial6", "Tutorial6\Tutorial6.vcxproj", "{BE3E4125-1DE4-4280-AE2F-4F3C339F3A3F}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tutorial_06", "Tutorial6\Tutorial6.vcxproj", "{BE3E4125-1DE4-4280-AE2F-4F3C339F3A3F}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tutorial7", "Tutorial7\Tutorial7.vcxproj", "{563426F2-7F71-43B0-A203-52812A529608}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tutorial_07", "Tutorial7\Tutorial7.vcxproj", "{563426F2-7F71-43B0-A203-52812A529608}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tutorial8", "Tutorial8\Tutorial8.vcxproj", "{99683230-C6E7-4429-A8A8-2D57136FE247}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tutorial_08", "Tutorial8\Tutorial8.vcxproj", "{99683230-C6E7-4429-A8A8-2D57136FE247}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tutorial9", "Tutorial9\Tutorial9.vcxproj", "{89A890E3-AF81-4064-B9A3-8AA54890A8E1}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tutorial_09", "Tutorial9\Tutorial9.vcxproj", "{89A890E3-AF81-4064-B9A3-8AA54890A8E1}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tutorial10", "Tutorial10\Tutorial10.vcxproj", "{EA25C238-582D-4E1D-B73F-D6CD630BD6C5}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tutorial_10", "Tutorial10\Tutorial10.vcxproj", "{EA25C238-582D-4E1D-B73F-D6CD630BD6C5}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tutorial11", "Tutorial11\Tutorial11.vcxproj", "{0AA76F88-5AF3-4DDA-939E-DC8962C9FE85}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tutorial_11", "Tutorial11\Tutorial11.vcxproj", "{0AA76F88-5AF3-4DDA-939E-DC8962C9FE85}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tutorial12", "Tutorial12\Tutorial12.vcxproj", "{298DA6AC-CD4A-4E81-9853-EB7527B14B75}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tutorial_12", "Tutorial12\Tutorial12.vcxproj", "{298DA6AC-CD4A-4E81-9853-EB7527B14B75}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GameApp", "GameApp\GameApp.vcxproj", "{91E93E43-BA23-4758-AF3F-7888FCD2AAB7}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Framework", "GameApp\GameApp.vcxproj", "{91E93E43-BA23-4758-AF3F-7888FCD2AAB7}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tutorial_13", "Tutorial_13\Tutorial_13.vcxproj", "{78196939-D35A-42F1-AC16-6F9F143A81C5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -141,6 +143,14 @@ Global
 		{91E93E43-BA23-4758-AF3F-7888FCD2AAB7}.Release|x64.Build.0 = Release|x64
 		{91E93E43-BA23-4758-AF3F-7888FCD2AAB7}.Release|x86.ActiveCfg = Release|Win32
 		{91E93E43-BA23-4758-AF3F-7888FCD2AAB7}.Release|x86.Build.0 = Release|Win32
+		{78196939-D35A-42F1-AC16-6F9F143A81C5}.Debug|x64.ActiveCfg = Debug|x64
+		{78196939-D35A-42F1-AC16-6F9F143A81C5}.Debug|x64.Build.0 = Debug|x64
+		{78196939-D35A-42F1-AC16-6F9F143A81C5}.Debug|x86.ActiveCfg = Debug|Win32
+		{78196939-D35A-42F1-AC16-6F9F143A81C5}.Debug|x86.Build.0 = Debug|Win32
+		{78196939-D35A-42F1-AC16-6F9F143A81C5}.Release|x64.ActiveCfg = Release|x64
+		{78196939-D35A-42F1-AC16-6F9F143A81C5}.Release|x64.Build.0 = Release|x64
+		{78196939-D35A-42F1-AC16-6F9F143A81C5}.Release|x86.ActiveCfg = Release|Win32
+		{78196939-D35A-42F1-AC16-6F9F143A81C5}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

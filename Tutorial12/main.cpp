@@ -18,6 +18,10 @@ SDL_Window* g_pWindow = nullptr;
 SDL_Renderer* g_pRenderer = nullptr;
 Texture* g_pModulatedTexture = nullptr;
 
+Uint8 r = 0xFF;
+Uint8 g = 0xFF;
+Uint8 b = 0xFF;
+
 
 bool init() {
 
@@ -98,9 +102,9 @@ void drawTexture(Texture* texture, Uint8 r, Uint8 g, Uint8 b) {
 void onRender() {
 	fprintf(stderr, "%s\n", __FUNCTION__);
 
-	Uint8 r = 0xFF;
-	Uint8 g = 0xFF;
-	Uint8 b = 0xFF;
+	//Uint8 r = 0xFF;
+	//Uint8 g = 0xFF;
+	//Uint8 b = 0xFF;
 
 
 	SDL_SetRenderDrawColor(g_pRenderer, 0xFF, 0xFF, 0xFF, 0xFF);
@@ -115,9 +119,9 @@ void onInputHandler(SDL_Event& e) {
 
 	//fprintf(stderr, "onInputHandler -> %s", __FUNCTION__);
 
-	Uint8 r = 0xFF;
-	Uint8 g = 0xFF;
-	Uint8 b = 0xFF;
+	//Uint8 r = 0xFF;
+	//Uint8 g = 0xFF;
+	//Uint8 b = 0xFF;
 
 	switch (e.key.keysym.sym) {
 		case SDLK_q:
