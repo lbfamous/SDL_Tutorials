@@ -31,6 +31,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Framework", "GameApp\GameAp
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tutorial_13", "Tutorial_13\Tutorial_13.vcxproj", "{78196939-D35A-42F1-AC16-6F9F143A81C5}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tutorial_14", "Tutorial_14\Tutorial_14.vcxproj", "{AC1088CA-653E-488C-AAB3-E7438A5F29DF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -151,6 +153,14 @@ Global
 		{78196939-D35A-42F1-AC16-6F9F143A81C5}.Release|x64.Build.0 = Release|x64
 		{78196939-D35A-42F1-AC16-6F9F143A81C5}.Release|x86.ActiveCfg = Release|Win32
 		{78196939-D35A-42F1-AC16-6F9F143A81C5}.Release|x86.Build.0 = Release|Win32
+		{AC1088CA-653E-488C-AAB3-E7438A5F29DF}.Debug|x64.ActiveCfg = Debug|x64
+		{AC1088CA-653E-488C-AAB3-E7438A5F29DF}.Debug|x64.Build.0 = Debug|x64
+		{AC1088CA-653E-488C-AAB3-E7438A5F29DF}.Debug|x86.ActiveCfg = Debug|Win32
+		{AC1088CA-653E-488C-AAB3-E7438A5F29DF}.Debug|x86.Build.0 = Debug|Win32
+		{AC1088CA-653E-488C-AAB3-E7438A5F29DF}.Release|x64.ActiveCfg = Release|x64
+		{AC1088CA-653E-488C-AAB3-E7438A5F29DF}.Release|x64.Build.0 = Release|x64
+		{AC1088CA-653E-488C-AAB3-E7438A5F29DF}.Release|x86.ActiveCfg = Release|Win32
+		{AC1088CA-653E-488C-AAB3-E7438A5F29DF}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

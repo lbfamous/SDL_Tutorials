@@ -118,7 +118,7 @@ bool init() {
 		}
 		window = SDL_CreateWindow("SDL TUTORIAL 13", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
 		if(window == nullptr){
-			printf("Window coul dnot be created! SDL Error: %s\n", SDL_GetError());
+			printf("Window could not be created! SDL Error: %s\n", SDL_GetError());
 			successs = false;
 		}
 		else {
